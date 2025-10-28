@@ -17,7 +17,7 @@ function FolderImages({ folderId, token }) {
     const fetchImages = async () => {
         try {
             setLoading(true);
-            const res = await axios.get(`http://localhost:5001/api/upload/${folderId}`, {
+            const res = await axios.get(`https://kooyapady-admin-backend-rtb2.onrender.com/api/upload/${folderId}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             console.log(res.data.images);
@@ -33,7 +33,7 @@ function FolderImages({ folderId, token }) {
     const deleteImage = async (cloudinaryPublicId) => {
         if (!window.confirm("Delete this image?")) return;
         try {
-            await axios.delete(`http://localhost:5001/api/upload/${folderId}/${encodeURIComponent(cloudinaryPublicId)}`, {
+            await axios.delete(`https://kooyapady-admin-backend-rtb2.onrender.com/api/upload/${folderId}/${encodeURIComponent(cloudinaryPublicId)}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setImages(images.filter(img => img.public_id !== cloudinaryPublicId));
@@ -48,7 +48,7 @@ function FolderImages({ folderId, token }) {
         if (!newName) return;
         try {
             const res = await axios.put(
-                `http://localhost:5001/api/upload/${folderId}/${publicId}`,
+                `https://kooyapady-admin-backend-rtb2.onrender.com/api/upload/${folderId}/${publicId}`,
                 { newName },
                 { headers: { Authorization: `Bearer ${token}` } }
             );

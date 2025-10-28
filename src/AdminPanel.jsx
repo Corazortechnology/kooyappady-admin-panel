@@ -224,7 +224,7 @@ export default function AdminPanel({ onLogout }) {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [view, setView] = useState("folders"); // "folders" or "feedback"
 
-  const API_URL = "http://localhost:5001/api";
+  const API_URL = "https://kooyapady-admin-backend-rtb2.onrender.com/api";
 
   // Add folder UI state
   const [adding, setAdding] = useState(false);

@@ -6,7 +6,7 @@ export default function FeedbackList({ token }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const API_FEEDBACK = "http://localhost:5001/api/feedback";
+  const API_FEEDBACK = "https://kooyapady-admin-backend-rtb2.onrender.com/api/feedback";
 
   useEffect(() => {
     fetchFeedbacks();
