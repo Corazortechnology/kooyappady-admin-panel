@@ -10,7 +10,7 @@ export default function FeedbackList({ token }) {
 
   useEffect(() => {
     fetchFeedbacks();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, []);
 
   const fetchFeedbacks = async () => {
